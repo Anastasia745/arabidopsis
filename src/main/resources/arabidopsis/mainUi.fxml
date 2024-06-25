@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="908.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arabidopsis.controllers.ControllerMain">
+    <TabPane prefHeight="594.0" prefWidth="908.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+        <tabs>
+            <Tab text="МОДЕЛЬ МЕРИСТЕМЫ">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <HBox layoutX="100.0" layoutY="100.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <VBox alignment="CENTER" prefHeight="513.0" prefWidth="538.0" HBox.hgrow="ALWAYS">
+                                <Pane fx:id="out1" prefHeight="264.0" prefWidth="346.0" style="-fx-border-color: black;" VBox.vgrow="ALWAYS">
+                                    <VBox.margin><Insets /></VBox.margin>
+                                    <padding><Insets bottom="5.0" left="5.0" right="5.0" top="5.0" /></padding>
+                                </Pane>
+                                <Button fx:id="drawGraphicButton" mnemonicParsing="false" text="ПОСТРОИТЬ ГРАФИК">
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin></Button>
+                                <padding><Insets bottom="5.0" left="5.0" right="5.0" top="5.0" /></padding>
+                            </VBox>
+                            <VBox prefHeight="513.0" prefWidth="551.0" HBox.hgrow="ALWAYS">
+                                <HBox prefHeight="30.0" prefWidth="443.0" style="-fx-border-color: gray;">
+                                    <Button mnemonicParsing="false" onAction="#startSimulation" prefHeight="26.0" prefWidth="142.0" text="СТАРТ">
+                                        <HBox.margin><Insets left="5.0" right="5.0" /></HBox.margin>
+                                    </Button>
+                                    <Button mnemonicParsing="false" onAction="#stopSimulation" prefHeight="26.0" prefWidth="146.0" text="СТОП">
+                                        <HBox.margin><Insets left="5.0" right="5.0" /></HBox.margin>
+                                    </Button>
+                                    <Button fx:id="applyCellPropButton" mnemonicParsing="false" onAction="#applyCellProperties" prefHeight="26.0" prefWidth="154.0" text="ПРИМЕНИТЬ">
+                                        <HBox.margin><Insets left="5.0" right="5.0" /></HBox.margin>
+                                    </Button>
+                                    <VBox.margin><Insets /></VBox.margin>
+                                    <padding><Insets bottom="5.0" left="5.0" right="5.0" top="5.0" /></padding>
+                                </HBox>
+                                <VBox prefHeight="206.0" prefWidth="456.0" style="-fx-border-color: gray;">
+                                    <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="398.0" style="-fx-max-width: Infinity;" text="ПАРАМЕТРЫ КЛЕТКИ" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                                        <VBox.margin><Insets bottom="5.0" top="5.0" /></VBox.margin>
+                                    </Label>
+                                    <HBox alignment="CENTER" prefHeight="61.0" prefWidth="443.0" style="-fx-border-color: gray;">
+                                        <Label prefHeight="18.0" prefWidth="20.0" text="ID:">
+                                            <HBox.margin><Insets left="5.0" right="5.0" /></HBox.margin>
+                                        </Label>
+                                        <Label fx:id="cellIdLabel" prefHeight="25.0" prefWidth="30.0" />
+                                        <Label prefHeight="18.0" prefWidth="80.0" text="СОСТОЯНИЕ">
+                                            <HBox.margin><Insets left="10.0" right="5.0" /></HBox.margin>
+                                        </Label>
+                                        <ChoiceBox fx:id="cellStatesChoiceBox" prefWidth="100.0">
+                                            <HBox.margin><Insets left="5.0" right="5.0" /></HBox.margin>
+                                        </ChoiceBox>
+                                        <Label prefHeight="18.0" prefWidth="130.0" text="ПЛОСКОСТЬ ДЕЛЕНИЯ">
+                                            <HBox.margin><Insets left="10.0" right="5.0" /></HBox.margin>
+                                        </Label>
+                                        <ChoiceBox fx:id="divChoiceBox" prefWidth="100.0">
+                                            <HBox.margin><Insets left="5.0" right="5.0" /></HBox.margin>
+                                        </ChoiceBox>
+                                    </HBox>
+                                    <VBox prefHeight="125.0" prefWidth="214.0">
+                                        <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="354.0">
+                                            <padding><Insets bottom="5.0" left="5.0" right="5.0" top="5.0" /></padding>
+                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ГЕН" wrappingWidth="100.0" />
+                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="АКТИВНОСТЬ" wrappingWidth="100.0">
+                                                <HBox.margin><Insets left="5.0" right="5.0" /></HBox.margin>
+                                            </Text>
+                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="КОЛИЧЕСТВО ПРОДУКТОВ" wrappingWidth="160.0">
+                                                <HBox.margin><Insets left="5.0" right="5.0" /></HBox.margin>
+                                            </Text>
+                                        </HBox>
+                                        <ScrollPane prefHeight="80.0" prefWidth="443.0" VBox.vgrow="ALWAYS">
+                                            <content>
+                                                <VBox fx:id="genesTable" layoutX="140.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                            </content>
+                                        </ScrollPane>
+                                    </VBox>
+                                    <VBox.margin><Insets top="5.0" /></VBox.margin>
+                                    <padding><Insets bottom="5.0" left="5.0" right="5.0" top="5.0" /></padding>
+                                </VBox>
+                                <ScrollPane fitToWidth="true" prefHeight="283.0" prefWidth="456.0" style="-fx-max-width: Infinity; -fx-border-color: gray;" VBox.vgrow="ALWAYS">
+                                    <content>
+                                        <VBox prefHeight="306.0" prefWidth="438.0">
+                                            <Label alignment="CENTER" prefHeight="25.0" prefWidth="518.0" style="-fx-max-width: Infinity;" text="СОСТОЯНИЯ" VBox.vgrow="ALWAYS">
+                                                <VBox.margin><Insets bottom="5.0" top="5.0" /></VBox.margin>
+                                            </Label>
+                                            <HBox alignment="CENTER" prefHeight="46.0" prefWidth="439.0" style="-fx-border-color: gray;">
+                                                <ChoiceBox fx:id="statesChoiceBox" prefHeight="26.0" prefWidth="210.0">
+                                                    <HBox.margin><Insets right="5.0" /></HBox.margin>
+                                                </ChoiceBox>
+                                                <Button fx:id="addStateButton" mnemonicParsing="false" onAction="#addState" prefHeight="26.0" prefWidth="120.0" text="ДОБАВИТЬ">
+                                                    <HBox.margin><Insets left="5.0" right="5.0" /></HBox.margin>
+                                                </Button>
+                                                <Button fx:id="deleteStateButton" mnemonicParsing="false" onAction="#removeState" prefHeight="26.0" prefWidth="120.0" text="УДАЛИТЬ">
+                                                    <HBox.margin><Insets left="5.0" right="5.0" /></HBox.margin>
+                                                </Button>
+                                                <Button fx:id="applyStateButton" mnemonicParsing="false" onAction="#applyStateProperties" prefHeight="26.0" prefWidth="120.0" text="ПРИМЕНИТЬ">
+                                                    <HBox.margin><Insets left="5.0" /></HBox.margin>
+                                                </Button>
+                                                <padding><Insets bottom="5.0" left="10.0" right="10.0" top="5.0" /></padding>
+                                            </HBox>
+                                            <HBox alignment="CENTER" prefHeight="36.0" prefWidth="439.0" style="-fx-border-color: gray;">
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="НОМЕР" wrappingWidth="50.0">
+                                                    <HBox.margin><Insets /></HBox.margin>
+                                                </Text>
+                                                <TextField fx:id="idStateField" prefHeight="26.0" prefWidth="70.0">
+                                                    <HBox.margin><Insets left="5.0" /></HBox.margin>
+                                                </TextField>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="НАЗВАНИЕ">
+                                                    <HBox.margin><Insets left="10.0" /></HBox.margin>
+                                                </Text>
+                                                <TextField fx:id="nameStateField">
+                                                    <HBox.margin><Insets left="5.0" /></HBox.margin>
+                                                </TextField>
+                                                <ColorPicker fx:id="colorPicker" prefHeight="26.0" prefWidth="150.0">
+                                                    <HBox.margin><Insets left="10.0" /></HBox.margin>
+                                                </ColorPicker>
+                                                <VBox.margin><Insets top="5.0" /></VBox.margin>
+                                                <padding><Insets bottom="5.0" left="10.0" right="10.0" top="5.0" /></padding>
+                                            </HBox>
+                                            <HBox alignment="CENTER" prefHeight="43.0" prefWidth="438.0" style="-fx-border-color: gray;">
+                                                <VBox.margin><Insets top="5.0" /></VBox.margin>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ОПИСАНИЕ" />
+                                                <TextField fx:id="descStateField" prefHeight="26.0" prefWidth="200.0">
+                                                    <HBox.margin><Insets left="10.0" /></HBox.margin>
+                                                </TextField>
+                                                <Button fx:id="descStateButton" mnemonicParsing="false" onAction="#openDescriptionState" prefHeight="26.0" prefWidth="120.0" text="РАЗВЕРНУТЬ">
+                                                    <HBox.margin><Insets left="10.0" /></HBox.margin>
+                                                </Button>
+                                            </HBox>
+                                            <HBox prefHeight="147.0" prefWidth="443.0">
+                                                <VBox prefHeight="100.0" prefWidth="210.0" HBox.hgrow="ALWAYS">
+                                                    <padding><Insets bottom="5.0" right="5.0" top="5.0" /></padding>
+                                                    <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="200.0">
+                                                        <padding><Insets bottom="5.0" left="5.0" right="5.0" top="5.0" /></padding>
+                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="БЕЛОК" wrappingWidth="100.0" />
+                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="КОЛИЧЕСТВО" wrappingWidth="100.0" />
+                                                    </HBox>
+                                                    <VBox fx:id="proteinStateList" prefHeight="300.0" prefWidth="222.0" style="-fx-border-color: gray;" /></VBox>
+                                                <VBox prefHeight="178.0" prefWidth="208.0" HBox.hgrow="ALWAYS">
+                                                    <Label alignment="CENTER" prefHeight="35.0" prefWidth="244.0" style="-fx-max-width: Infinity;" text="СОСТОЯНИЯ СОСЕДНИХ КЛЕТОК">
+                                                        <padding><Insets bottom="5.0" left="5.0" right="5.0" top="5.0" /></padding>
+                                                    </Label>
+                                                    <VBox fx:id="nsStateList" prefHeight="300.0" prefWidth="212.0" style="-fx-border-color: gray;" />
+                                                    <padding><Insets bottom="5.0" left="5.0" top="5.0" /></padding>
+                                                </VBox>
+                                            </HBox>
+                                            <padding><Insets bottom="5.0" left="5.0" right="5.0" top="5.0" /></padding>
+                                        </VBox>
+                                    </content>
+                                    <VBox.margin><Insets top="5.0" /></VBox.margin>
+                                </ScrollPane>
+                                <HBox.margin><Insets bottom="5.0" left="5.0" right="5.0" top="5.0" /></HBox.margin>
+                            </VBox>
+                        </HBox>
+                    </AnchorPane>
+                </content>
+            </Tab>
+            <Tab text="МОДЕЛЬ ГЕННОЙ СЕТИ">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <HBox layoutX="222.0" layoutY="149.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <VBox prefHeight="513.0" prefWidth="351.0">
+                                <Pane fx:id="matrPane" prefHeight="200.0" prefWidth="300.0" style="-fx-border-color: black;" VBox.vgrow="ALWAYS" />
+                                <VBox prefHeight="335.0" prefWidth="314.0" style="-fx-border-color: black;" VBox.vgrow="ALWAYS">
+                                    <VBox.margin><Insets top="5.0" /></VBox.margin>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="296.0">
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="betta" wrappingWidth="50.0">
+                                            <HBox.margin><Insets left="10.0" /></HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="bettaField" />
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="296.0">
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="gamma" wrappingWidth="50.0">
+                                            <HBox.margin><Insets left="10.0" /></HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="gammaField" />
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="296.0">
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="K" wrappingWidth="50.0">
+                                            <HBox.margin><Insets left="10.0" /></HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="KField" />
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="300.0">
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="a" wrappingWidth="50.0">
+                                            <HBox.margin><Insets left="10.0" /></HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="activityField" />
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="296.0">
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="N" wrappingWidth="50.0">
+                                            <HBox.margin><Insets left="10.0" /></HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="NField" />
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="296.0">
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="r" wrappingWidth="50.0">
+                                            <HBox.margin><Insets left="10.0" /></HBox.margin>
+                                        </Text>
+                                        <TextField fx:id="rField" />
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="296.0">
+                                        <AnchorPane prefHeight="34.0" prefWidth="62.0" style="-fx-pref-width: 50;" />
+                                        <Button fx:id="applyGeneParam" mnemonicParsing="false" onAction="#applyGeneParameters" prefHeight="26.0" prefWidth="150.0" text="ПРИМЕНИТЬ">
+                                            <HBox.margin><Insets left="10.0" /></HBox.margin>
+                                        </Button>
+                                    </HBox>
+                                    <padding><Insets top="10.0" /></padding>
+                                </VBox>
+                                <padding><Insets bottom="5.0" left="5.0" right="5.0" top="5.0" /></padding>
+                            </VBox>
+                            <Pane fx:id="sysImg" nodeOrientation="LEFT_TO_RIGHT" prefHeight="513.0" prefWidth="482.0" style="-fx-border-color: black; -fx-background-color: black;" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" />
+                            <VBox prefHeight="513.0" prefWidth="347.0">
+                                <Button fx:id="sepalsButton" mnemonicParsing="false" onAction="#drawSepals" prefHeight="26.0" prefWidth="110.0" text="Зона листьев">
+                                    <VBox.margin><Insets bottom="5.0" right="5.0" top="5.0" /></VBox.margin>
+                                </Button>
+                                <Button fx:id="petalsButton" mnemonicParsing="false" onAction="#drawPetals" prefHeight="26.0" prefWidth="110.0" text="Зона лепестков">
+                                    <VBox.margin><Insets bottom="5.0" right="5.0" top="5.0" /></VBox.margin>
+                                </Button>
+                                <Button fx:id="stamensButton" mnemonicParsing="false" onAction="#drawsStamens" prefHeight="26.0" prefWidth="110.0" text="Зона тычинок">
+                                    <VBox.margin><Insets bottom="5.0" right="5.0" top="5.0" /></VBox.margin>
+                                </Button>
+                                <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="200.0">
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Радиус меристемы R" wrappingWidth="140.0">
+                                        <HBox.margin><Insets /></HBox.margin>
+                                    </Text>
+                                    <TextField fx:id="RField" prefHeight="26.0" prefWidth="100.0">
+                                        <HBox.margin><Insets /></HBox.margin>
+                                    </TextField>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="200.0">
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Зона ингибирования D" wrappingWidth="140.0">
+                                        <HBox.margin><Insets /></HBox.margin>
+                                    </Text>
+                                    <TextField fx:id="DField" prefHeight="26.0" prefWidth="100.0">
+                                        <HBox.margin><Insets /></HBox.margin>
+                                    </TextField>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="200.0">
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Зона образования d0" wrappingWidth="140.0">
+                                        <HBox.margin><Insets /></HBox.margin>
+                                    </Text>
+                                    <TextField fx:id="d0Field" prefHeight="26.0" prefWidth="100.0">
+                                        <HBox.margin><Insets /></HBox.margin>
+                                    </TextField>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="200.0">
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Зона активности Rmax" wrappingWidth="140.0" />
+                                    <TextField fx:id="RmaxField" prefHeight="26.0" prefWidth="100.0">
+                                        <HBox.margin><Insets /></HBox.margin>
+                                    </TextField>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="200.0">
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Зона активности Rmin" wrappingWidth="140.0" />
+                                    <TextField fx:id="RminField" prefHeight="26.0" prefWidth="100.0">
+                                        <HBox.margin><Insets /></HBox.margin>
+                                    </TextField>
+                                </HBox>
+                                <Button fx:id="applySysParam" mnemonicParsing="false" onAction="#applySystemParameters" prefHeight="26.0" prefWidth="110.0" text="ПРИМЕНИТЬ" />
+                                <padding><Insets bottom="5.0" left="10.0" right="10.0" top="5.0" /></padding>
+                            </VBox>
+                        </HBox>
+                    </AnchorPane>
+                </content>
+            </Tab>
+        </tabs>
+    </TabPane>
+</VBox>

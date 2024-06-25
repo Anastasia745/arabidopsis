@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arabidopsis.controllers.ControllerGraphic">
+   <children>
+      <ScrollPane fitToWidth="true" minHeight="-Infinity" prefHeight="79.0" prefWidth="566.0" style="-fx-border-color: gray;" vbarPolicy="NEVER" VBox.vgrow="ALWAYS">
+         <content>
+            <HBox fx:id="genesListHBox" prefWidth="566.0" />
+         </content>
+         <padding><Insets bottom="5.0" left="5.0" right="5.0" top="5.0" /></padding>
+      </ScrollPane>
+      <Button fx:id="drawGraphicButton" mnemonicParsing="false" text="ПОСТРОИТЬ ГРАФИК">
+         <VBox.margin><Insets bottom="5.0" top="5.0" /></VBox.margin>
+      </Button>
+      <Pane fx:id="graphicPane" prefHeight="315.0" prefWidth="600.0" VBox.vgrow="ALWAYS" />
+   </children>
+</VBox>

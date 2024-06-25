@@ -1,0 +1,80 @@
+{
+  "genes": [
+    {
+      "name": "Gene 1",
+      "activity": 5,
+      "b": [0, 1, -1],
+      "g": [1, 1, 1],
+      "K": [1, 1, 1],
+      "N": 2,
+      "r": 0.1
+    },
+    {
+      "name": "Gene 2",
+      "activity": 2.8,
+      "b": [0, 0, 1],
+      "g": [1, 1, 1],
+      "K": [1, 1, 1],
+      "N": 2,
+      "r": 0.2
+    },
+    {
+      "name": "Gene 3",
+      "activity": 3.1,
+      "b": [-1, 1, 0],
+      "g": [1, 1, 1],
+      "K": [1, 1, 1],
+      "N": 2,
+      "r": 0.15
+    }
+  ],
+  "states": [
+    {
+      "id": 1,
+      "name": "State 1",
+      "description": "Description for state 1",
+      "color": "0x00ffffff",
+      "proteins": [
+        {
+          "protein": "Gene 1",
+          "count": 100
+        },
+        {
+          "protein": "Gene 2",
+          "count": 150
+        }
+      ],
+      "influence": [0, 0.1, 0.2],
+      "neighbors": []
+    },
+    {
+      "id": 2,
+      "name": "State 2",
+      "description": "Description for state 2",
+      "color": "0x663366ff",
+      "proteins": [
+        {
+          "protein": "Gene 2",
+          "count": 200
+        },
+        {
+          "protein": "Gene 3",
+          "count": 250
+        }
+      ],
+      "influence": [0, 0.01, 0],
+      "neighbors": [1]
+    }
+  ],
+  "R": 200,
+  "RmaxSepals": 180,
+  "RminSepals": 150,
+  "RminPetals": 120,
+  "RminStamens": 90,
+  "DSepals": 150,
+  "DPetals": 120,
+  "DStamens": 80,
+  "d0Sepals": 10,
+  "d0Petals": 10,
+  "d0Stamens": 8
+}
